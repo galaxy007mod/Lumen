@@ -8,7 +8,7 @@ import androidx.compose.ui.graphics.Color
 
 // Primary — EduAdmin blue (light) / sky blue (dark)
 val ForestGreen = Color(0xFF0052CC)          // name kept for existing imports; now brand blue
-val ForestGreenDark = Color(0xFF5DBCFF)
+val ForestGreenDark = Color(0xFF00BAFF)
 
 // Accent — red-orange (was Terracotta)
 val Terracotta = Color(0xFFFF562F)
@@ -21,17 +21,19 @@ val AmberAccentDark = Color(0xFFFF9920)
 // Chrome (semi-dark parts: bottom bar, banners)
 val ChromeNavy = Color(0xFF172B4C)
 val ChromeNavyDeep = Color(0xFF112038)
+val ChromeGreen = Color(0xFF10B47F)
+val ChromeBlueBright = Color(0xFF397BF3)
 val ChromeSelected = Color(0xFF00BAFF)
 val ChromeUnselected = Color(0xFF93D2FE)
 
 // Backgrounds
 val WarmWhite = Color(0xFFFAFBFD)            // light content background
-val DeepForestBg = Color(0xFF131B2E)         // dark background
+val DeepForestBg = Color(0xFF112038)         // dark background (EduAdmin deep navy)
 
 // Surfaces
 val SurfaceLight = Color(0xFFE9EEF4)
-val SurfaceDark = Color(0xFF171F32)
-val SurfaceVariantDark = Color(0xFF20283B)
+val SurfaceDark = Color(0xFF172B4C)
+val SurfaceVariantDark = Color(0xFF1F2F51)
 
 val SurfaceContainerLowestLight = Color(0xFFFFFFFF)
 val SurfaceContainerLowLight = Color(0xFFF5F6F9)
@@ -39,19 +41,19 @@ val SurfaceContainerLight = Color(0xFFEEF1F8)
 val SurfaceContainerHighLight = Color(0xFFE9EEF4)
 val SurfaceContainerHighestLight = Color(0xFFE1EAF9)
 
-val SurfaceContainerLowestDark = Color(0xFF12192C)
-val SurfaceContainerLowDark = Color(0xFF171F32)
-val SurfaceContainerDark = Color(0xFF1F273A)
-val SurfaceContainerHighDark = Color(0xFF20283B)
-val SurfaceContainerHighestDark = Color(0xFF1F2F51)
+val SurfaceContainerLowestDark = Color(0xFF0E1A30)
+val SurfaceContainerLowDark = Color(0xFF142645)
+val SurfaceContainerDark = Color(0xFF172B4C)
+val SurfaceContainerHighDark = Color(0xFF1F2F51)
+val SurfaceContainerHighestDark = Color(0xFF26396B)
 
 // On-colors
 val OnPrimaryLight = Color(0xFFFFFFFF)
 val OnPrimaryDark = Color(0xFF112038)
 val OnSurfaceLight = Color(0xFF172B4C)
-val OnSurfaceDark = Color(0xFFE8EDF3)
+val OnSurfaceDark = Color(0xFFFFFFFF)
 val OnSurfaceVariantLight = Color(0xFF5A6A85)
-val OnSurfaceVariantDark = Color(0xFF93A4C0)
+val OnSurfaceVariantDark = Color(0xFFB9C7DE)
 
 // Error
 val ErrorRed = Color(0xFFE23030)
@@ -63,4 +65,4 @@ val OnErrorContainerDark = Color(0xFFFFDAD4)
 
 // OCR chip tint — teal
 val OcrTint = Color(0xFF04A08B)
-val OcrTintDark = Color(0xFF04A08B)
+val OcrTintDark = Color(0xFF10B47F)
