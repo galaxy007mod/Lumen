@@ -171,7 +171,7 @@ class PdfDocumentView @JvmOverloads constructor(
      *  suppresses the destroy callback's selection clear. */
     private var actionModeRestarting = false
     private val selectionPaint = Paint().apply {
-        color = Color.argb(80, 0x2A, 0x4D, 0x3A) // translucent ForestGreen
+        color = Color.argb(80, 0x00, 0x52, 0xCC) // translucent brand blue
         style = Paint.Style.FILL
     }
     private val selectionHandlePaint = Paint().apply {
@@ -227,11 +227,11 @@ class PdfDocumentView @JvmOverloads constructor(
         isAntiAlias = true
     }
     private val scrollThumbActivePaint = Paint().apply {
-        color = 0xFF_D4A24C.toInt() // AmberAccent
+        color = 0xFF_FF9920.toInt() // AmberAccent
         isAntiAlias = true
     }
     private val bubblePaint = Paint().apply {
-        color = 0xF0_2A4D3A.toInt() // ForestGreen, near-opaque
+        color = 0xF0_0052CC.toInt() // brand blue, near-opaque
         isAntiAlias = true
     }
     private val bubbleTextPaint = Paint().apply {
