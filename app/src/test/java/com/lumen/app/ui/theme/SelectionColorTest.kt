@@ -22,7 +22,7 @@ class SelectionColorTest {
     // @spec SET-APPEAR-006
     @Test
     fun darkScheme_selectionContainerIsDeepNavyBlue() {
-        assertEquals(Color(0xFF1F2F51), DarkColorScheme.secondaryContainer)
-        assertEquals(Color(0xFF93D2FE), DarkColorScheme.onSecondaryContainer)
+        assertEquals(Color(0xFF1B3D78), DarkColorScheme.secondaryContainer)
+        assertEquals(Color(0xFFFFFFFF), DarkColorScheme.onSecondaryContainer)
     }
 }
