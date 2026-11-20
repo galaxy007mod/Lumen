@@ -13,6 +13,7 @@ import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
+import com.lumen.app.ui.theme.LumenChrome
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -82,19 +83,19 @@ private tailrec fun android.content.Context.findActivity(): Activity? = when (th
 private data class Tab(val screen: Screen, val label: String, val icon: @Composable (Boolean) -> Unit)
 
 private val SEARCH_TAB = Tab(Screen.Search, "Search") { selected ->
-    SearchTabIcon(if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+    SearchTabIcon(if (selected) LumenChrome.selected else LumenChrome.unselected)
 }
 private val LIBRARY_TAB = Tab(Screen.Library, "Library") { selected ->
-    LibraryTabIcon(if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+    LibraryTabIcon(if (selected) LumenChrome.selected else LumenChrome.unselected)
 }
 private val DOCUMENTS_TAB = Tab(Screen.Documents, "Documents") { selected ->
-    LibraryTabIcon(if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+    LibraryTabIcon(if (selected) LumenChrome.selected else LumenChrome.unselected)
 }
 private val SETTINGS_TAB = Tab(Screen.Settings, "Settings") { selected ->
     Icon(
         imageVector = Icons.Filled.Settings,
         contentDescription = null,
-        tint = if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+        tint = if (selected) LumenChrome.selected else LumenChrome.unselected,
         modifier = Modifier.size(24.dp),
     )
 }
@@ -227,7 +228,7 @@ private fun LumenScaffold(
     Scaffold(
         bottomBar = {
             if (currentRoute in tabRoutes) {
-                NavigationBar {
+                NavigationBar(containerColor = LumenChrome.container) {
                     tabs.forEach { tab ->
                         val selected = navBackStackEntry?.destination
                             ?.hierarchy?.any { it.route == tab.screen.route } == true
@@ -247,11 +248,11 @@ private fun LumenScaffold(
                                 )
                             },
                             colors = NavigationBarItemDefaults.colors(
-                                indicatorColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.14f),
-                                selectedIconColor = MaterialTheme.colorScheme.primary,
-                                selectedTextColor = MaterialTheme.colorScheme.primary,
-                                unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                                unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                                indicatorColor = LumenChrome.indicator,
+                                selectedIconColor = LumenChrome.selected,
+                                selectedTextColor = LumenChrome.selected,
+                                unselectedIconColor = LumenChrome.unselected,
+                                unselectedTextColor = LumenChrome.unselected,
                             ),
                         )
                     }
