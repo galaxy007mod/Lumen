@@ -47,17 +47,19 @@ internal val LightColorScheme = lightColorScheme(
 )
 
 internal val DarkColorScheme = darkColorScheme(
-    primary = ForestGreenDark,
+    primary = ForestGreenDark,                 // cyan
     onPrimary = OnPrimaryDark,
-    primaryContainer = ForestGreen,
+    primaryContainer = ForestGreen,            // brand blue
     onPrimaryContainer = Color.White,
-    secondary = AmberAccentDark,
+    secondary = AmberAccentDark,               // orange
     onSecondary = ChromeNavyDeep,
     // @spec SET-APPEAR-006
-    secondaryContainer = Color(0xFF1F2F51),
-    onSecondaryContainer = Color(0xFF93D2FE),
-    tertiary = OcrTintDark,
+    secondaryContainer = Color(0xFF1B3D78),
+    onSecondaryContainer = Color.White,
+    tertiary = OcrTintDark,                    // green
     onTertiary = ChromeNavyDeep,
+    tertiaryContainer = Color(0xFF04A08B),     // teal
+    onTertiaryContainer = ChromeNavyDeep,
     background = DeepForestBg,
     onBackground = OnSurfaceDark,
     surface = DeepForestBg,
@@ -73,7 +75,7 @@ internal val DarkColorScheme = darkColorScheme(
     error = ErrorRedDark,
     errorContainer = ErrorContainerDark,
     onErrorContainer = OnErrorContainerDark,
-    outline = Color(0xFF56657F),
+    outline = Color(0xFF5C7099),
 )
 
 /**
@@ -109,11 +111,12 @@ fun LumenTheme(
     }
 }
 
-/** Dark "chrome" colors for the semi-dark look: navy in light mode, deeper navy in dark mode. */
+/** Chrome colors for the nav bar: navy in both modes; white + blue selection in dark mode. */
 object LumenChrome {
-    val container: Color
-        @Composable get() = if (LocalLumenDarkTheme.current) ChromeNavyDeep else ChromeNavy
-    val selected: Color get() = ChromeSelected
+    val container: Color get() = ChromeNavy
+    val selected: Color
+        @Composable get() = if (LocalLumenDarkTheme.current) Color.White else ChromeSelected
     val unselected: Color get() = ChromeUnselected.copy(alpha = 0.75f)
-    val indicator: Color get() = ChromeSelected.copy(alpha = 0.18f)
+    val indicator: Color
+        @Composable get() = if (LocalLumenDarkTheme.current) ForestGreen else ChromeSelected.copy(alpha = 0.18f)
 }
