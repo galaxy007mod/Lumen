@@ -17,17 +17,15 @@ import androidx.core.view.WindowCompat
 internal val LightColorScheme = lightColorScheme(
     primary = ForestGreen,
     onPrimary = OnPrimaryLight,
-    // Revamp: darker toolbar/background container for stronger contrast in light mode.
-    primaryContainer = ForestGreen,
+    // Navy banner/toolbar container (semi-dark chrome over light content).
+    primaryContainer = ChromeNavy,
     onPrimaryContainer = Color.White,
-    secondary = Terracotta,
-    onSecondary = Color.White,
-    // Selection containers (segmented rows, filter chips, chip-styled pills)
-    // are forest-green family, matching the nav bar's indicator — the old pale
-    // terracotta read as an error state against green chrome.
+    secondary = AmberAccent,
+    onSecondary = ChromeNavy,
+    // Selection containers (segmented rows, filter chips, chip-styled pills).
     // @spec SET-APPEAR-006
-    secondaryContainer = Color(0xFFD6E6D6),
-    onSecondaryContainer = Color(0xFF11291A),
+    secondaryContainer = Color(0xFFE1EAF9),
+    onSecondaryContainer = ChromeNavy,
     tertiary = OcrTint,
     onTertiary = Color(0xFFFFFFFF),
     background = WarmWhite,
@@ -45,21 +43,21 @@ internal val LightColorScheme = lightColorScheme(
     error = ErrorRed,
     errorContainer = ErrorContainerLight,
     onErrorContainer = OnErrorContainerLight,
-    outline = Color(0xFF717971),
+    outline = Color(0xFF8A97AD),
 )
 
 internal val DarkColorScheme = darkColorScheme(
     primary = ForestGreenDark,
     onPrimary = OnPrimaryDark,
-    primaryContainer = Color(0xFF004D28),
-    onPrimaryContainer = Color(0xFFB8DFBF),
-    secondary = TerracottaDark,
-    onSecondary = Color(0xFF5A2410),
+    primaryContainer = ForestGreen,
+    onPrimaryContainer = Color.White,
+    secondary = AmberAccentDark,
+    onSecondary = ChromeNavyDeep,
     // @spec SET-APPEAR-006
-    secondaryContainer = Color(0xFF2F4A38),
-    onSecondaryContainer = Color(0xFFCCE5D2),
+    secondaryContainer = Color(0xFF1F2F51),
+    onSecondaryContainer = Color(0xFF93D2FE),
     tertiary = OcrTintDark,
-    onTertiary = Color(0xFF3E2800),
+    onTertiary = ChromeNavyDeep,
     background = DeepForestBg,
     onBackground = OnSurfaceDark,
     surface = DeepForestBg,
@@ -75,7 +73,7 @@ internal val DarkColorScheme = darkColorScheme(
     error = ErrorRedDark,
     errorContainer = ErrorContainerDark,
     onErrorContainer = OnErrorContainerDark,
-    outline = Color(0xFF8B938B),
+    outline = Color(0xFF56657F),
 )
 
 /**
@@ -109,4 +107,13 @@ fun LumenTheme(
             content = content
         )
     }
+}
+
+/** Dark "chrome" colors for the semi-dark look: navy in light mode, deeper navy in dark mode. */
+object LumenChrome {
+    val container: Color
+        @Composable get() = if (LocalLumenDarkTheme.current) ChromeNavyDeep else ChromeNavy
+    val selected: Color get() = ChromeSelected
+    val unselected: Color get() = ChromeUnselected.copy(alpha = 0.75f)
+    val indicator: Color get() = ChromeSelected.copy(alpha = 0.18f)
 }
