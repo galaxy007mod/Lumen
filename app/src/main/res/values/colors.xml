@@ -10,6 +10,6 @@
 
     <!-- Brand tokens for non-Compose surfaces (widget, shortcut icon) —
          mirror ui/theme/Color.kt: ForestGreen / WarmWhite. -->
-    <color name="lumen_forest_green">#FF2A4D3A</color>
-    <color name="lumen_warm_white">#FFFAFAF7</color>
+    <color name="lumen_forest_green">#FF172B4C</color>
+    <color name="lumen_warm_white">#FFFAFBFD</color>
 </resources>
